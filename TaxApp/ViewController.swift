@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var numbers: [Int] = []
+    var numbers: [Double] = []
 
     @IBOutlet weak var additionLabel: UILabel!
     override func viewDidLoad() {
@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         let userDefaults = UserDefaults.standard
         //"add"というキーで保存された値がなにかある -> 値をtaskArrayへ
         if userDefaults.object(forKey: "add") != nil {
-            numbers = userDefaults.object(forKey: "add") as! [Int]
+            numbers = userDefaults.object(forKey: "add") as! [Double]
             print(numbers)
             let sum = numbers.reduce(0, +)
             print("合計: \(sum)")

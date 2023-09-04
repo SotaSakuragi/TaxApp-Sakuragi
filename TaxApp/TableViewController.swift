@@ -10,7 +10,7 @@ import UIKit
 class TableViewController: UITableViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var calculationField: UITextField!
-    var numbers: [Int] = []
+    var numbers: [Double] = []
     
     func textFieldInt() -> Int? {
         if let text = calculationField.text, let intValue = Int(text) {
@@ -50,10 +50,12 @@ class TableViewController: UITableViewController {
     }
     @IBAction func setButton(_ sender: Any) {
         if let resultText = resultLabel.text, let resultValue = Double(resultText) {
-            numbers.append(Int(resultValue))
+            numbers.append(Double(resultValue))
             print(numbers)
             let userDefaults = UserDefaults.standard
                     userDefaults.set(numbers, forKey: "add")
+            tableView.reloadData()
+
         }
     }
     
@@ -67,11 +69,13 @@ class TableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
+        print("確認")
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        print("操作")
         return numbers.count
     }
 
@@ -82,7 +86,7 @@ class TableViewController: UITableViewController {
         // Configure the cell...
         let number = numbers[indexPath.row]
         cell.textLabel?.text = "\(number)"
-        print(cell)
+        print("動け")
         return cell
     }
     
