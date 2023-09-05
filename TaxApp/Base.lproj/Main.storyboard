@@ -52,6 +52,9 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="inputField:" destination="uM9-A4-RnD" eventType="editingChanged" id="nca-31-pqZ"/>
+                                    </connections>
                                 </textField>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xBE-Sl-uAy">
                                     <rect key="frame" x="211" y="97" width="100" height="32"/>
@@ -99,7 +102,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="calculationField" destination="xR8-aN-if9" id="4rS-Ox-sus"/>
+                        <outlet property="calculationField" destination="xR8-aN-if9" id="s12-GQ-TbH"/>
                         <outlet property="resultLabel" destination="NIH-37-zNM" id="nlr-ey-S0O"/>
                     </connections>
                 </tableViewController>
@@ -115,7 +118,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGb-KX-jDl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGb-KX-jDl">
                                 <rect key="frame" x="16" y="115" width="361" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="Wkw-u2-sVe"/>

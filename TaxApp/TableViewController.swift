@@ -11,6 +11,8 @@ class TableViewController: UITableViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var calculationField: UITextField!
     var numbers: [Double] = []
+    var taxRate: Double = 1.1
+    
     
     func textFieldInt() -> Int? {
         if let text = calculationField.text, let intValue = Int(text) {
@@ -37,9 +39,13 @@ class TableViewController: UITableViewController {
         if let intValue = textFieldInt() {
             switch (sender as AnyObject).selectedSegmentIndex {
             case 0:
+                taxRate = 1.1
+                print(taxRate)
                 let result = Double(intValue) * 1.1
                 resultLabel.text = String(result)
             case 1:
+                taxRate = 1.08
+                print(taxRate)
                 let result = Double(intValue) * 1.08
                 resultLabel.text = String(result)
             default:
@@ -49,6 +55,7 @@ class TableViewController: UITableViewController {
         
     }
     @IBAction func setButton(_ sender: Any) {
+        print(taxRate)
         if let resultText = resultLabel.text, let resultValue = Double(resultText) {
             numbers.append(Double(resultValue))
             print(numbers)
@@ -57,6 +64,16 @@ class TableViewController: UITableViewController {
             tableView.reloadData()
 
         }
+    }
+    
+    
+    @IBAction func inputField(_ sender: UITextField) {
+        print("動いたよ")
+        if let intValue = textFieldInt() {
+            let result = Double(intValue) * taxRate
+            resultLabel.text = String(result)
+        }
+        
     }
     
     func showAlert(title: String, message: String) {
