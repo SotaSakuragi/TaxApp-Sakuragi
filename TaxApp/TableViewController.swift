@@ -27,6 +27,7 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        calculationField.keyboardType = .numberPad
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -42,12 +43,12 @@ class TableViewController: UITableViewController {
                 taxRate = 1.1
                 print(taxRate)
                 let result = Double(intValue) * 1.1
-                resultLabel.text = String(result)
+                resultLabel.text = String(format: "%.2f", result)
             case 1:
                 taxRate = 1.08
                 print(taxRate)
                 let result = Double(intValue) * 1.08
-                resultLabel.text = String(result)
+                resultLabel.text = String(format: "%.2f", result)
             default:
                 break
             }
@@ -67,11 +68,12 @@ class TableViewController: UITableViewController {
     }
     
     
+    
     @IBAction func inputField(_ sender: UITextField) {
         print("動いたよ")
         if let intValue = textFieldInt() {
             let result = Double(intValue) * taxRate
-            resultLabel.text = String(result)
+            resultLabel.text = String(format: "%.2f", result)
         }
         
     }

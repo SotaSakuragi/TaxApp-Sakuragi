@@ -20,7 +20,7 @@ class ViewController: UIViewController {
             print(numbers)
             let sum = numbers.reduce(0, +)
             print("合計: \(sum)")
-            additionLabel.text = "合計: \(sum)"
+            additionLabel.text = String(format: "合計: %.2f", sum)
             // Do any additional setup after loading the view.
         }
     }
